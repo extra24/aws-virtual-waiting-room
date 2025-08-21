@@ -104,6 +104,17 @@ async function tryAdmitFromQueue() {
 // 주기적 워커(200ms) - 빈 슬롯이 생기면 자동 승격
 setInterval(tryAdmitFromQueue, 200);
 
+// 시스템 리셋을 위한 새로운 API 엔드포인트 추가
+app.post('/api/admin/reset', async (req, res) => {
+    try {
+      await resetStats(); // 이 함수는 Redis의 모든 데이터를 삭제합니다.
+      res.json({ success: true, message: '시스템이 성공적으로 리셋되었습니다.' });
+    } catch (error) {
+      console.error('관리자 리셋 에러:', error);
+      res.status(500).json({ success: false, message: '리셋 실패' });
+    }
+});
+
 // ====== API ======
 app.post('/api/book-ktx', async (req, res) => {
   try {
