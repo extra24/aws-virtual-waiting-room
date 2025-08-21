@@ -1,4 +1,3 @@
-cat > scripts/load-test.sh << 'EOF'
 #!/bin/bash
 set -e
 
@@ -44,4 +43,3 @@ artillery run load-test-scenario.yml
 rm -f load-test-scenario.yml
 echo "🎯 부하테스트 완료!"
 
-EOF

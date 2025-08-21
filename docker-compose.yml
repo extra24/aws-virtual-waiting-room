@@ -30,8 +30,8 @@ services:
       - PORT=3000
       - REDIS_URL=redis://redis:6379
       - JWT_SECRET=dev-jwt-secret-key
-      - MAX_CONCURRENT_USERS=10
-      - SESSION_DURATION=600000
+      - MAX_CONCURRENT_USERS=50
+      - SESSION_DURATION=3000
     depends_on:
       redis:
         condition: service_healthy

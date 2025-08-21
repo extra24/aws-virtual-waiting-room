@@ -1,23 +1,17 @@
-# Node.js
-# 'node_modules' 디렉토리는 라이브러리 파일이므로 Git에 포함하지 않습니다.
+# Dependency directories
+# 'node_modules' 폴더는 제외합니다.
 node_modules/
 
-# IDE files
-# Visual Studio Code 관련 설정 파일입니다.
-.vscode/
-
 # Build artifacts
-# TypeScript(TS) 파일을 컴파일하여 생성되는 JavaScript(JS) 파일은 Git에 포함하지 않습니다.
-# 또한 'bin' 디렉토리도 컴파일 결과물이므로 제외합니다.
+# TypeScript(TS) 파일을 컴파일하여 생성된 결과물 폴더는 제외합니다.
 bin/
-*.js
-*.js.map
 
-# Docker
-# 'Dockerfile'에서 사용되는 '.env' 파일이 있다면 제외해야 합니다. (민감한 정보 포함 가능성)
-.env
-
-# Logs and temp files
-# 로그 파일이나 임시 파일은 Git에 포함하지 않습니다.
+# IDE files and temporary files
+# .vscode 디렉토리와 로그 파일을 제외합니다.
+.vscode/
 *.log
 *.tmp
+
+# Environment variables
+# 환경 변수 파일(.env)은 민감한 정보를 포함할 수 있으므로 제외합니다.
+.env
